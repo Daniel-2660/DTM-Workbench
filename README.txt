@@ -1,24 +1,13 @@
-D.T.M. Workbench v0.4.1
+D.T.M. Workbench v0.4.2
 
-REN BRANDING-OPDATERING
+Kun ikonrettelse:
+- Det eksisterende D.T.M.-logo er beskåret som et rigtigt kvadrat.
+- Det brede banner-look er fjernet.
+- Logoet fylder nu appikonet korrekt.
+- Ingen funktioner er ændret.
 
-Tilføjet:
-- favicon.ico
-- favicon-16x16.png
-- favicon-32x32.png
-- apple-touch-icon.png (180×180)
-- icon-192.png
-- icon-512.png
-- maskable-512.png
-- opdateret manifest.webmanifest
-- opdateret index.html
-- ny service-worker cacheversion
-
-Kun det øverste store D.T.M.-logo er brugt.
-Ingen funktioner er ændret.
-
-Efter deploy på iPhone:
-1. Luk den installerede Workbench.
-2. Fjern det gamle ikon fra hjemmeskærmen.
-3. Åbn siden i Safari.
-4. Del → Føj til hjemmeskærm.
+Efter opdatering:
+1. Push filerne til GitHub.
+2. Vent på GitHub Pages.
+3. Slet det gamle ikon fra hjemmeskærmen.
+4. Åbn siden i Safari og vælg Føj til hjemmeskærm igen.
