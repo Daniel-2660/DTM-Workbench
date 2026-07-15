@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080706">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="D.T.M. Workbench">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>D.T.M. Workbench</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+</head>
+<body>
+<main>
+  <section class="hero">
+    <img src="assets/dtm-logo.jpg" alt="D.T.M.">
+    <div class="shade"></div>
+    <div class="heroText">
+      <div class="eyebrow">D.T.M. WORKBENCH v0.4.1</div>
+      <h1>Research Tools</h1>
+      <p>PBO til ZIP. PAA og EDDS til PNG. PNG til PAA og eksperimentel EDDS.</p>
+    </div>
+  </section>
+
+  <section class="tool card">
+    <div class="icon">📦</div>
+    <div><h2>PBO Extractor</h2><p>Udpak en ukomprimeret DayZ-PBO som ZIP.</p></div>
+    <label class="button">Vælg PBO<input id="pboInput" type="file" accept=".pbo,application/octet-stream"></label>
+    <div id="pboWork" class="work hidden">
+      <b id="pboName"></b><div class="track"><div id="pboBar"></div></div><div id="pboStatus" class="status"></div>
+      <a id="pboDownload" class="button hidden" href="#" download>Download ZIP</a>
+    </div>
+  </section>
+
+  <section class="tool card">
+    <div class="icon">🎨</div>
+    <div><h2>Texture Converter</h2><p>Konvertér PAA eller EDDS til en almindelig PNG.</p></div>
+    <div class="choiceGrid">
+      <label class="button">PAA → PNG<input id="paaInput" type="file" accept=".paa,application/octet-stream"></label>
+      <label class="button">EDDS → PNG<input id="eddsInput" type="file" accept=".edds,application/octet-stream"></label>
+    </div>
+    <div id="textureWork" class="work hidden">
+      <b id="textureName"></b><div id="textureStatus" class="status"></div>
+      <canvas id="previewCanvas"></canvas>
+      <div id="textureMeta" class="meta"></div>
+      <a id="textureDownload" class="button hidden" href="#" download>Download PNG</a>
+    </div>
+  </section>
+
+
+  <section class="tool card">
+    <div class="icon">🧱</div>
+    <div><h2>PNG → PAA</h2><p>Byg en ukomprimeret RGBA_8888-PAA med mipmaps til test i DayZ.</p></div>
+    <label class="button">Vælg PNG<input id="pngInput" type="file" accept="image/png,.png"></label>
+    <div id="paaBuildWork" class="work hidden">
+      <b id="paaBuildName"></b>
+      <div class="track"><div id="paaBuildBar"></div></div>
+      <div id="paaBuildStatus" class="status"></div>
+      <div id="paaBuildMeta" class="meta"></div>
+      <a id="paaBuildDownload" class="button hidden" href="#" download>Download PAA</a>
+    </div>
+  </section>
+
+
+  <section class="tool card">
+    <div class="icon">🧪</div>
+    <div>
+      <h2>PNG → EDDS <small>(Experimental)</small></h2>
+      <p>Byg en ukomprimeret BGRA8-EDDS med en komplet mipmap-kæde.</p>
+    </div>
+    <label class="button">Vælg PNG<input id="pngEddsInput" type="file" accept="image/png,.png"></label>
+    <div id="eddsBuildWork" class="work hidden">
+      <b id="eddsBuildName"></b>
+      <div class="track"><div id="eddsBuildBar"></div></div>
+      <div id="eddsBuildStatus" class="status"></div>
+      <div id="eddsBuildMeta" class="meta"></div>
+      <a id="eddsBuildDownload" class="button hidden" href="#" download>Download EDDS</a>
+    </div>
+  </section>
+
+  <section class="note"><b>Lokalt og privat</b><span>Filerne behandles i Safari og uploades ikke til Netlify.</span></section>
+</main>
+<footer>D.T.M. Workbench · v0.4.1</footer>
+<script src="decoder.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
